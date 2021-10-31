@@ -1,0 +1,17 @@
+def ffilter(f, l):
+    newlist = []
+
+    if len(l[1:]) > 0:
+        newlist = ffilter(f, l[1:])
+
+    valor = l.__getitem__(0)
+    if f(valor):
+        newlist.insert(0, valor)
+
+    return newlist[:]
+
+
+funcao = lambda x: True if x > 30 else False
+
+array = [5, 15, 7, 20, 44, 10, 64, 48, 91]
+print(ffilter(funcao, array))
