@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct Int {
+	int value;
+	struct int * proximo;
+} Int;
+
+void show (Int * i) {
+	while (i != NULL) {
+		printf("%d ", i->value);
+		i = i->proximo;
+	}
+}
+
+int main () {
+	Int* i1 = malloc(sizeof(Int));
+	Int* i2 = malloc(sizeof(Int));
+	Int* i3 = malloc(sizeof(Int));
+	Int* i4 = malloc(sizeof(Int));
+	
+	i4->prox = NULL;
+	i4->valor = 4;
+	i3->prox = i4;
+	i3->valor = 3;
+	i2->prox = i3;
+	i2->valor = 2;
+	i1->prox = i2;
+	i1->valor = 1;
+	
+	Int* lista = malloc(sizeof(Int));
+	lista->proximo = i1;
+	
+	show(lista->proximo);
+
+	return 0;
+}
