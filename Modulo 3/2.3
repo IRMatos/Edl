@@ -1,0 +1,10 @@
+def fmap(f, l):
+    for i in range(0, len(l)):
+        array[i] = f(l.__getitem__(i))
+
+
+funcao = lambda x: x*3
+
+array = [5, 15, 7, 20, 44, 10, 64, 48, 91]
+fmap(funcao, array)
+print(array)
